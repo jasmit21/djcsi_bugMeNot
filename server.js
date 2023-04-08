@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const database = require('./models/dbConfig')
 // const userModel = require('./models/userModel')
-
+const homeroute = require('./routes/homeRoute')
 //flash
 var flash = require("connect-flash");
 app.use(flash());
@@ -47,10 +47,12 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     console.log("Heyya you reacheddd")
 })
-app.post('/auth',(req,res)=>{
-    console.log("inside auth post route")
+// app.post('/auth',(req,res)=>{
+//     console.log("inside auth post route")
   
-})
+// })
+
+app.use('/auth',homeroute);
 
 
 //creating server
