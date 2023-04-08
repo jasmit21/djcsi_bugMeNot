@@ -13,7 +13,7 @@ app.use(flash());
 //session
 const sessions = require("express-session");
 const cookieParser = require("cookie-parser");
-
+const short = require('short-uuid');
 //set cookie-parser
 app.use(cookieParser());
 
@@ -49,6 +49,8 @@ app.use('/block',homeroute)
 
 app.use('/authuser',homeroute);
 
+//try 
+app.use('/child-connect',homeroute);
 
 //creating server
 var port = process.env.PORT || 3000;

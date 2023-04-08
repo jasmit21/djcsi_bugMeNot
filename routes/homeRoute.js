@@ -4,6 +4,7 @@ const session = require("express-session");
 const authUser = require("../controllers/authUser");
 const { log } = require("console");
 const block = require("../controllers/blockController")
+const childParent = require('../controllers/parentChildConnect')
 const router = express.Router();
 
 
@@ -13,4 +14,5 @@ router.get("/",(req,res)=>{
 router.post("/authuser", authUser.post );
 
 router.post('/block',block.post);
+router.post('/child-connect',childParent.post);
 module.exports = router;
