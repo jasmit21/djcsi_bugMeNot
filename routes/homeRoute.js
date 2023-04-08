@@ -10,41 +10,25 @@ const firebaseAdmin = require("firebase-admin");
 // const dashboard = require("../controllers/dashboardController");
 // const signUp = require("../controllers/signUpController"); 
 
-const dbApiController = require("../controllers/dbApiController");
 
 const pool = require("../models/dbConnect");
 
 // const bcryptjs = require("bcryptjs");
-const cluedinAppSignupController = require("../controllers/CluedinAppSignupController");
-const cluedinAppSigninController = require("../controllers/cluedinAppSigninController");
-const cluedinAppRecieveMessagesController = require("../controllers/cluedinApprecieveMessageController");
 
 const app = express();
 const path = require("path");
 const createUser = require("../controllers/createUser");
 const authUser = require("../controllers/authUser");
 const logoutController = require("../controllers/logoutController");
-const listuser = require("../controllers/listusercontroller");
-const listNotif = require("../controllers/listNotifController");
-const updateuser = require("../controllers/updateuserController");
-const deleteuser = require("../controllers/deleteuserController");
-const webUserProfile = require("../controllers/web-profile_edit");
-let authAppUser = require("../controllers/appControllers/authAppUser");
-let event = require("../controllers/eventController");
-const resetPasswordController = require("../controllers/resetPasswordController");
-const featuredEveController = require("../controllers/featuredEveController");
-const targetUserCount = require("../controllers/targetStudentCount")
-const bulkUserCreate = require('../controllers/bulkUserCreation')
 
-const tryCode = require('../controllers/try')
-// firebaseAdmin.initializeApp({
-//   credential: firebaseAdmin.credential.cert(require("../cluedInOfficialAndroid.json")),
-// });
+let event = require("../controllers/eventController");
+
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json);
 
-// app.set('view engine', 'hbs');
+
 
 router.get("/", homeController.get);
 //login validation
