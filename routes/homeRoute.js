@@ -2,8 +2,12 @@ const express = require("express");
 
 const session = require("express-session");
 const authUser = require("../controllers/authUser");
+const { log } = require("console");
 const router = express.Router();
 
 
-router.post("/auth", authUser.post )
+router.get("/",(req,res)=>{
+    console.log("Home page");
+})
+router.post("/authuser", authUser.post )
 module.exports = router;

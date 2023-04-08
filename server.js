@@ -44,15 +44,10 @@ app.use(express.json());
 
 
 //routes 
-app.get('/',(req,res)=>{
-    console.log("Heyya you reacheddd")
-})
-// app.post('/auth',(req,res)=>{
-//     console.log("inside auth post route")
-  
-// })
+app.use('/',homeroute)
 
-app.use('/auth',homeroute);
+
+app.use('/authuser',homeroute);
 
 
 //creating server

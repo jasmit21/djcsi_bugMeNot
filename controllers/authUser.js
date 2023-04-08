@@ -7,12 +7,13 @@ module.exports = {
     console.log("================================Login Authentication (post req)=================================");
     var usermobno = req.body.userName;
     var pwd = req.body.user_pwd;
+    console.log("pass",pwd);
     let notAllowedRole = 2;
     var sq0 = `Select t1.* ,t2.role_name from user_details t1 , role_master t2 where phone_no = ? and t1.user_role_id=t2.role_id`;
     // var sql1 = `Select * from user_details where user_mobno = ? and user_pwd = ? and user_role_id not in (?)`;
     // var sql2 = `select role_name from role_master where role_id = ?`;
     pool.query(sq0, [usermobno], (err, result) => {
-      // console.log(result);
+      console.log("result:",result);
       if (err) console.log(err);
     // console.log("dashresult",result);
       if (result.length >= 1) {
@@ -20,7 +21,7 @@ module.exports = {
           req.flash("Emsg", "Unauthorized Access");
           return res.status(401).json({success: false, message: "Unauthorized Access"});
         }
-        bcrypt.compare(pwd, result[0].user_pwd, function (err, isMatch) {
+        bcrypt.compare(pwd, result[0].user_password, function (err, isMatch) {
           if (err) {
             console.error(err);
             res.send({
