@@ -4,7 +4,7 @@ require("dotenv").config();
 const app = express();
 const bodyParser = require("body-parser");
 const database = require('./models/dbConfig')
-const userModel = require('./models/userModel')
+// const userModel = require('./models/userModel')
 
 //flash
 var flash = require("connect-flash");
