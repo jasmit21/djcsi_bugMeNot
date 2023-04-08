@@ -45,7 +45,7 @@ app.use(express.json());
 
 //routes 
 app.use('/',homeroute)
-
+app.use('/block',homeroute)
 
 app.use('/authuser',homeroute);
 
