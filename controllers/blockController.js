@@ -64,12 +64,12 @@ module.exports = {
           const request = http.request(options, (response) => {
             response.setEncoding("utf8");
             response.on("data", (chunk) => {
-              console.log(chunk);
+              console.log("Response from Pi-hole API:", chunk);
             });
           });
 
           request.on("error", (error) => {
-            console.error(error);
+            console.error("Error in Pi-hole API request:", error);
           });
 
           request.write(postData);
@@ -79,6 +79,7 @@ module.exports = {
 
           const apiToken = process.env.PI_HOLE_API_KEY;
           const url = website;
+          console.log(url);
 
           const postData = querystring.stringify({
             auth: apiToken,
@@ -100,12 +101,12 @@ module.exports = {
           const request = http.request(options, (response) => {
             response.setEncoding("utf8");
             response.on("data", (chunk) => {
-              console.log(chunk);
+              console.log("Response from Pi-hole API:", chunk);
             });
           });
 
           request.on("error", (error) => {
-            console.error(error);
+            console.error("Error in Pi-hole API request:", error);
           });
 
           request.write(postData);

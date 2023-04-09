@@ -48,6 +48,7 @@ app.use('/',homeroute)
 app.use('/block',homeroute)
 
 app.use('/authuser',homeroute);
+app.use('/sendWebsites',homeroute)
 
 //try 
 app.use('/child-connect',homeroute);
