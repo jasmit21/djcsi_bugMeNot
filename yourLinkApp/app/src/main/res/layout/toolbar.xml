@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:layoutDirection="locale"
+    android:padding="@dimen/padding_8dp"
+    android:translationY="10dp">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_arrow_back"
+        android:tint="#000000"
+        android:translationX="15dp" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="64dp"
+        android:fontFamily="@font/open_sans_bold"
+        android:text="@string/home"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:translationX="95dp" />
+
+    <ImageButton
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_settings"
+        android:tint="#000000"
+        android:translationX="-15dp" />
+</FrameLayout>

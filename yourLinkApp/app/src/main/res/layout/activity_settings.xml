@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="locale"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextViewSettingsHeader"
+                    android:layout_marginTop="@dimen/margin_32dp"
+                    android:text="@string/account" />
+
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    style="@style/ButtonSettings"
+                    android:text="@string/logout" />
+
+                <include layout="@layout/horizontal_line" />
+
+                <Button
+                    android:id="@+id/btnChangePassword"
+                    style="@style/ButtonSettings"
+                    android:text="@string/change_password" />
+
+                <include layout="@layout/horizontal_line" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
